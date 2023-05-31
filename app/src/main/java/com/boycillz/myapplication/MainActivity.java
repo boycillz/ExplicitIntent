@@ -16,12 +16,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnMoveActivity = findViewById(R.id.btn_move_activity);
         btnMoveActivity.setOnClickListener(this);
+
+        Button btnMoveActivityWithData = findViewById(R.id.btn_move_activity_data);
+        btnMoveActivityWithData.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btn_move_activity);
+        if (v.getId() == R.id.btn_move_activity){
         Intent moveIntent = new Intent(MainActivity.this, MoveActivity.class);
         startActivity(moveIntent);
+    } else if (v.getId() == R.id.btn_move_activity_data) {
+            Intent moveWithDataIntent = new Intent(MainActivity.this, MoveWithActivityData.class);
+            moveWithDataIntent.putExtra(MoveWithActivityData.EXTRA_NAME, "Boycillz");
+            moveWithDataIntent.putExtra(MoveWithActivityData.EXTRA_AGE, 17);
+            startActivity(moveWithDataIntent);
+        }
     }
 }
