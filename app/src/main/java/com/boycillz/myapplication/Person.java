@@ -12,6 +12,18 @@ public class Person implements Parcelable {
     private String city;
     private int age;
 
+    public static final Creator<Person> CREATOR = new Creator<Person>() {
+        @Override
+        public Person createFromParcel(Parcel in) {
+            return new Person(in);
+        }
+
+        @Override
+        public Person[] newArray(int size) {
+            return new Person[size];
+        }
+    };
+
     public String getName() {
         return name;
     }
