@@ -15,7 +15,7 @@ public class Person implements Parcelable {
     public static final Creator<Person> CREATOR = new Creator<Person>() {
         @Override
         public Person createFromParcel(Parcel in) {
-            return new Person();
+            return new Person(in);
         }
 
         @Override
@@ -23,6 +23,10 @@ public class Person implements Parcelable {
             return new Person[size];
         }
     };
+
+    public Person() {
+
+    }
 
     public String getName() {
         return name;
@@ -56,7 +60,7 @@ public class Person implements Parcelable {
         this.age = age;
     }
 
-    protected Person(){
+    protected Person(Parcel in){
         name = in.readString();
         age = in.readInt();
         email = in.readString();
