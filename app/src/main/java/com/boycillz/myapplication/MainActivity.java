@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnMoveActivityWithData = findViewById(R.id.btn_move_activity_data);
         btnMoveActivityWithData.setOnClickListener(this);
+
+        Button btnMoveActivityWithObject = findViewById(R.id.btn_move_activity_object);
+        btnMoveActivityWithObject.setOnClickListener(this);
     }
 
     @Override
