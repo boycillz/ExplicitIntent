@@ -8,6 +8,7 @@
     tools:context=".MoveActivity">
 
     <TextView
+        android:id="@+id/tv_data_receive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/this_is_moveactivity"
